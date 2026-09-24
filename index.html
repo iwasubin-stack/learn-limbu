@@ -1,18 +1,18 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f5f7f4"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><title>Learn Limbu v1.0 MVP v1.0</title>
+<meta name="theme-color" content="#f5f7f4"><title>Learn Limbu v2 Preview</title>
 <style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;background:#f5f7f4;color:#17201c}main{max-width:980px;margin:auto;padding:18px}
 .muted{color:#65706b}nav{display:flex;gap:7px;overflow:auto;position:sticky;top:0;background:#f5f7f4;padding:10px 0;z-index:4}button,input,select{font:inherit;min-height:44px;border:1px solid #cbd3ce;border-radius:11px;padding:9px 12px;background:white}
 section{display:none}section.on{display:block}.card{background:white;border:1px solid #d8ded9;border-radius:15px;padding:15px;margin:9px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}
 .limbu{font-size:23px;font-weight:760}.dev{font-size:20px;margin-top:4px}.ne{font-size:17px;margin-top:4px}.tag{display:inline-block;font-size:11px;padding:4px 8px;border-radius:99px;background:#edf2ee;margin:6px 4px 0 0}
 .pan{border-left:4px solid #708b7c}.research{background:#faf6ee}input,select{width:100%}.answer{width:100%;text-align:left;margin:5px 0}.notice{padding:12px;border-left:4px solid #788980;background:#edf1ee;border-radius:8px}
-.speak{margin-top:9px}table{width:100%;border-collapse:collapse;background:white}th,td{padding:9px;border:1px solid #d8ded9;text-align:left}</style><meta name="description" content="Learn Yakthungpan with Panthare-first lessons, Nepali support, flashcards, quizzes and dictionary."><meta name="apple-mobile-web-app-capable" content="yes"></head><body><main><div style="padding:10px 12px;border-radius:12px;background:#eaf1ec;margin-bottom:12px"><b>Learn Limbu MVP v1.0</b><br><small>Panthare-first research build • Nepali support • Works offline after saving this file</small></div>
-<div class="muted">v1.0 • MVP v1.0 • Panthare-first</div><h1>Learn Limbu / लिम्बू सिकौं</h1>
+.speak{margin-top:9px}table{width:100%;border-collapse:collapse;background:white}th,td{padding:9px;border:1px solid #d8ded9;text-align:left}</style><meta name="description" content="Learn Yakthungpan with Panthare-first lessons, Nepali support, flashcards, quizzes and dictionary."><meta name="apple-mobile-web-app-capable" content="yes"></head><body><main><div style="padding:10px 12px;border-radius:12px;background:#eaf1ec;margin-bottom:12px"><b>Learn Limbu v2 Preview</b><br><small>Panthare-first research build • Nepali support • Works offline after saving this file</small></div>
+<div class="muted">v2 Preview • Panthare-first • source-aware</div><h1>Learn Limbu / लिम्बू सिकौं</h1>
 <p>Yakthungpan • Limbu + नेपाली + English</p>
-<nav><button data-go="home">Home</button><button data-go="learn">Learn</button><button data-go="panthare">Panthare</button><button data-go="cards">Flashcards</button><button data-go="quiz">Quiz</button><button data-go="dict">Dictionary</button><button data-go="nepali">नेपाली सहायता</button><button data-go="sources">Sources</button></nav>
+<nav><button data-go="home">Home</button><button data-go="learn">Learn</button><button data-go="panthare">Panthare</button><button data-go="cards">Flashcards</button><button data-go="quiz">Quiz</button><button data-go="dict">Dictionary</button><button data-go="nepali">नेपाली सहायता</button><button data-go="progress">Progress</button><button data-go="sources">Sources</button></nav>
 
 <section id="home" class="on"><div class="notice"><b>Research edition:</b> Panthare is the main teaching target. Other Limbu forms remain visible with source/variety labels instead of being falsely converted to Panthare.</div>
 <div class="grid"><div class="card"><h2>95</h2><p>Vocabulary/reference records</p></div><div class="card"><h2>3 languages</h2><p>Limbu • Nepali • English</p></div><div class="card"><h2>🔊 नेपाली</h2><p>Browser speech can read Nepali meanings aloud when the device supports Nepali TTS.</p></div></div>
-<div class="card"><h2>How each word works</h2><p><b>Limbu:</b> Roman/source form<br><b>नेपाली पढाइ:</b> Devanagari reading aid<br><b>नेपाली अर्थ:</b> Nepali meaning<br><b>English:</b> English meaning<br><b>Variety:</b> Panthare / Chaubise / sourced form</p></div></section>
+<div class="card"><h2>How each word works</h2><p><b>Limbu:</b> Roman/source form<br><b>नेपाली पढाइ:</b> Devanagari reading aid<br><b>नेपाली अर्थ:</b> Nepali meaning<br><b>English:</b> English meaning<br><b>Variety:</b> Panthare / Chaubise / sourced form</p></div><div class="card"><h2>Your study progress</h2><p id="v2progress">0 words studied</p><div style="height:10px;background:#e4ebe6;border-radius:99px;overflow:hidden"><div id="v2bar" style="height:100%;width:0;background:#708b7c"></div></div><p class="muted" id="v2streak">🔥 0 day streak</p></div></section>
 
 <section id="learn"><h2>Lessons / पाठ</h2><select id="cat"><option>Adjectives</option><option>Animals</option><option>Basics</option><option>Body</option><option>Family</option><option>Food</option><option>Home</option><option>Nature</option><option>Time</option><option>Verbs</option></select><div id="lesson"></div></section>
 
@@ -27,6 +27,8 @@ section{display:none}section.on{display:block}.card{background:white;border:1px 
 <section id="nepali"><h2>नेपाली सहायता</h2><div class="card"><h3>रोमन पढ्न गाह्रो भएमा</h3><p>हरेक शब्दमा <b>नेपाली पढाइ</b> देखाइएको छ। यो सिक्न सजिलो बनाउन बनाइएको पढाइ-सहायता हो; जहाँ मूल स्रोतमा देवनागरी थिएन, यसलाई आधिकारिक लिम्बू हिज्जे नसम्झनुहोस्।</p>
 <h3>अर्थ</h3><p>हरेक लिम्बू शब्दको नेपाली अर्थ पनि देखाइन्छ। 🔊 बटनले फोन/ब्राउजरमा नेपाली आवाज उपलब्ध भए नेपाली अर्थ पढ्छ।</p></div></section>
 
+
+<section id="progress"><h2>Progress / प्रगति</h2><div class="grid"><div class="card"><h2 id="v2studied">0</h2><p>Words studied</p></div><div class="card"><h2 id="v2pct">0%</h2><p>Dataset explored</p></div></div><div class="card"><p>Your progress is stored only on this device/browser.</p><button id="v2reset">Reset local progress</button></div></section>
 <section id="sources"><h2>Research basis</h2><div class="card"><h3>Primary references used for architecture/checking</h3>
 <p>• <b>Limbu-Nepali-English Dictionary</b>, Iman Singh Chemjong et al., Nepal Royal Academy, revised 2nd ed. 2002.</p>
 <p>• <b>Limbu-English-Nepali Dictionary</b>, Gambhirdhoj Tumbahangphe & Harkajang Kurumbang, Limbuwan Study Centre, 2015 (866 pages; Limbu script + Roman noted in catalogue).</p>
@@ -43,8 +45,16 @@ D.filter(x=>x.variety==='Panthare').forEach(x=>$('#panlist').appendChild(card(x)
 function pool(){let p=$('#mode').value==='pan'?D.filter(x=>x.variety==='Panthare'):D;return p.length?p:D}function flash(){let P=pool(),x=P[fi%P.length];$('#front').textContent=x.limbu;$('#back').style.display='none';$('#back').innerHTML='<div class="dev">'+x.dev+'</div><b>'+x.ne+'</b><br>'+x.en+'<br><span class="muted">'+x.variety+'</span>'}flash();$('#show').onclick=()=>$('#back').style.display='block';$('#next').onclick=()=>{fi++;flash()};$('#mode').onchange=()=>{fi=0;flash()};
 function sh(a){return [...a].sort(()=>Math.random()-.5)}function quiz(){let P=D.filter(x=>x.variety==='Panthare');if(P.length<4)P=D;let x=P[Math.floor(Math.random()*P.length)],o=sh([x,...sh(P.filter(y=>y.en!==x.en)).slice(0,3)]);$('#q').textContent=x.limbu+'  ('+x.dev+')';$('#msg').textContent='नेपाली अर्थ छान्नुहोस् / Choose the Nepali meaning.';let b=$('#answers');b.innerHTML='';o.forEach(y=>{let z=document.createElement('button');z.className='answer';z.textContent=y.ne+' — '+y.en;z.onclick=()=>$('#msg').textContent=y.en===x.en?'सही ✓ / Correct':'फेरि प्रयास गर्नुहोस् / Try again';b.appendChild(z)})}quiz();$('#newq').onclick=quiz;
 function search(q=''){q=q.toLowerCase();let b=$('#results');b.innerHTML='';D.filter(x=>(x.en+x.limbu+x.ne+x.dev+x.cat+x.variety).toLowerCase().includes(q)).forEach(x=>b.appendChild(card(x)))}search();$('#search').oninput=e=>search(e.target.value);
-})();</script></main><script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-}
-</script></body></html>
+})();
+const V2KEY='learnLimbuV2Progress';
+let V2=JSON.parse(localStorage.getItem(V2KEY)||'{"studied":[],"last":"","streak":0}');
+function v2id(x){return [x.limbu,x.en,x.variety].join('|')}
+function v2save(){localStorage.setItem(V2KEY,JSON.stringify(V2));v2render()}
+function v2mark(x){let k=v2id(x);if(!V2.studied.includes(k)){V2.studied.push(k);v2save()}}
+function v2day(){let t=new Date().toISOString().slice(0,10);if(V2.last!==t){let y=new Date(Date.now()-86400000).toISOString().slice(0,10);V2.streak=V2.last===y?(V2.streak||0)+1:1;V2.last=t;localStorage.setItem(V2KEY,JSON.stringify(V2))}}
+function v2render(){let n=V2.studied.length,p=Math.round(n/D.length*100);let a=document.querySelector('#v2progress'),b=document.querySelector('#v2bar'),c=document.querySelector('#v2streak'),d=document.querySelector('#v2studied'),e=document.querySelector('#v2pct');if(a)a.textContent=n+' of '+D.length+' words studied';if(b)b.style.width=p+'%';if(c)c.textContent='🔥 '+(V2.streak||0)+' day streak';if(d)d.textContent=n;if(e)e.textContent=p+'%'}
+document.querySelector('#show').addEventListener('click',()=>{let P=pool(),x=P[fi%P.length];v2mark(x)});
+document.querySelector('#v2reset').onclick=()=>{if(confirm('Reset local study progress?')){V2.studied=[];v2save()}};
+v2day();v2render();
+
+</script></main></body></html>
